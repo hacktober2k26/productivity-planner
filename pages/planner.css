@@ -1,0 +1,120 @@
+body{
+    min-height:100vh;
+}
+
+.planner-page{
+
+width:100%;
+    padding:50px;
+}
+
+
+
+.planner-card{
+width:100%;
+
+max-width:none;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    border-radius:25px;
+
+    padding:40px;
+
+}
+
+.planner-card h1{
+
+    color:white;
+
+    margin-bottom:10px;
+
+}
+
+.planner-card p{
+
+    color:#ffe5f4;
+
+    margin-bottom:30px;
+
+}
+
+.time-slot{
+
+    display:grid;
+
+    grid-template-columns:170px 1fr;
+
+    align-items:center;
+
+    gap:30px;
+
+    margin-bottom:18px;
+
+}
+.time{
+
+    color:white;
+
+    font-weight:600;
+
+    display:flex;
+
+    align-items:center;
+
+}
+
+.time-slot input{
+
+    width:100%;
+
+    height:50px;
+
+    padding:0 18px;
+
+    border:1px solid rgba(255,255,255,.25);
+
+    border-radius:12px;
+
+    background:rgba(255,255,255,.15);
+
+    color:white;
+
+    font-size:16px;
+
+    outline:none;
+
+}
+
+.time-slot input::placeholder{
+
+    color:rgba(255,255,255,.65);
+
+}
+
+.current-hour{
+
+    background:rgba(255,255,255,.08);
+
+    border-radius:15px;
+
+    padding:10px;
+
+}
+
+/*const sidebar*/
+
+.planner-layout{
+    margin-left:260px;
+    min-height:100vh;
+}
+
+
+.planner-page{
+    width:100%;
+    padding:50px;
+}

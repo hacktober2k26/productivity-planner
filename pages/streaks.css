@@ -1,0 +1,115 @@
+.streak-page{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:60px;
+
+}
+
+.streak-card{
+
+    width:700px;
+
+    padding:40px;
+
+    border-radius:25px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    text-align:center;
+
+}
+
+.streak-card h1{
+
+    color:white;
+
+    margin-bottom:10px;
+
+}
+
+.streak-card p{
+
+    color:#ffe5f4;
+
+    margin-bottom:35px;
+
+}
+
+.stats{
+
+    display:flex;
+
+    justify-content:space-around;
+
+    margin:40px 0;
+
+}
+
+.stat-box{
+
+    width:220px;
+
+    padding:30px;
+
+    border-radius:20px;
+
+    background:rgba(255,255,255,.08);
+
+}
+
+.stat-box h2{
+
+    font-size:60px;
+
+    color:white;
+
+    margin-bottom:10px;
+
+}
+
+.stat-box span{
+
+    color:#ffe5f4;
+
+}
+
+#completeDay{
+
+    margin-top:20px;
+
+    padding:16px 30px;
+
+    border:none;
+
+    border-radius:15px;
+
+    background:#ec4899;
+
+    color:white;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+    transition:.3s;
+
+}
+
+#completeDay:hover{
+
+    transform:translateY(-3px);
+
+    background:#db2777;
+
+}

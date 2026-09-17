@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tasks</title>
+
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="tasks.css">
+    <link rel="stylesheet" href="pages/components/sidebar.css">
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css"
+        rel="stylesheet"/>
+
+</head>
+
+<body>
+
+<div class="tasks-page">
+
+    <div class="tasks-card">
+
+        <h1>📝 Tasks To Do</h1>
+
+        <p class="subtitle">
+            Organize everything you need to get done.
+        </p>
+
+        <!-- Search -->
+
+        <input
+            type="text"
+            id="searchTask"
+            placeholder="🔍 Search tasks...">
+
+        <!-- Add Task -->
+
+        <div class="task-input">
+
+            <input
+                type="text"
+                id="taskInput"
+                placeholder="Enter a task...">
+
+            <button id="addTaskBtn">
+
+                +
+
+            </button>
+
+        </div>
+
+        <!-- Options -->
+
+        <div class="task-options">
+
+            <select id="priority">
+
+                <option value="High">🔴 High</option>
+
+                <option value="Medium">🟡 Medium</option>
+
+                <option value="Low">🟢 Low</option>
+
+            </select>
+
+            <select id="category">
+
+                <option>Coding</option>
+
+                <option>Study</option>
+
+                <option>Fitness</option>
+
+                <option>Personal</option>
+
+                <option>Guitar</option>
+
+            </select>
+
+            <input
+                type="date"
+                id="dueDate">
+
+        </div>
+
+        <!-- Filters -->
+
+        <div class="filters">
+
+            <button class="filter active" data-filter="all">
+
+                All
+
+            </button>
+
+            <button class="filter" data-filter="active">
+
+                Active
+
+            </button>
+
+            <button class="filter" data-filter="completed">
+
+                Completed
+
+            </button>
+
+        </div>
+
+        <!-- Progress -->
+
+        <h3 id="progress">
+
+            0 of 0 Completed
+
+        </h3>
+
+        <!-- Task List -->
+
+        <ul id="taskList"></ul>
+
+        <button id="clearCompleted">
+
+            Clear Completed
+
+        </button>
+
+    </div>
+
+</div>
+
+<script src="tasks.js"></script>
+
+</body>
+
+</html>

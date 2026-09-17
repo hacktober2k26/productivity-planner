@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productivity Dashboard</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css"
+      rel="stylesheet"/>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="pages/components/sidebar.css">
+</head>
+
+<body>
+
+<div id="dashboard">
+<div id="sidebar">
+
+    <i class="ri-menu-line">DASHBOARD</i>
+
+    <a href="pages/planner.html" class="sidebar-link">
+        YOUR DAILY PLANNER
+    </a>
+
+    <a href="pages/timer.html" class="sidebar-link">
+        POMODORO TIMER
+    </a>
+
+    <a href="pages/streaks.html" class="sidebar-link">
+        YOUR STREAKS
+    </a>
+
+    <a href="pages/profile.html" class="sidebar-link">
+        YOUR PROFILE
+    </a>
+
+</div>
+    <!--ghadi -->
+
+    <div class="clock">
+  <!-- Numbers -->
+    <div class="number" style="--rotate: 30deg"><span>1</span></div>
+    <div class="number" style="--rotate: 60deg"><span>2</span></div>
+    <div class="number" style="--rotate: 90deg"><span>3</span></div>
+    <div class="number" style="--rotate: 120deg"><span>4</span></div>
+    <div class="number" style="--rotate: 150deg"><span>5</span></div>
+    <div class="number" style="--rotate: 180deg"><span>6</span></div>
+    <div class="number" style="--rotate: 210deg"><span>7</span></div>
+    <div class="number" style="--rotate: 240deg"><span>8</span></div>
+    <div class="number" style="--rotate: 270deg"><span>9</span></div>
+    <div class="number" style="--rotate: 300deg"><span>10</span></div>
+    <div class="number" style="--rotate: 330deg"><span>11</span></div>
+    <div class="number" style="--rotate: 0deg"><span>12</span></div>
+
+    <!-- Hands -->
+    <div class="hand hour" id="hour"></div>
+    <div class="hand minute" id="minute"></div>
+    <div class="hand second" id="second"></div>
+    <div class="center"></div>
+</div>
+
+<!--weather-->
+
+<div id="weatherCard">
+
+    <h3 id="city">📍 Loading...</h3>
+
+    <img id="weatherIcon" src="" alt="Weather Icon">
+
+    <h1 id="temperature">--°</h1>
+
+    <p id="condition">Loading...</p>
+
+    <div class="weather-details">
+
+        <div class="detail-box">
+            💧
+            <span id="humidity">--%</span>
+        </div>
+
+        <div class="detail-box">
+            💨
+            <span id="wind">-- km/h</span>
+        </div>
+
+    </div>
+
+</div>
+
+<!--quote -->
+<div id="quote">
+    <div class="quote-icon">✨</div>
+
+    <h3>Daily Inspiration</h3>
+
+    <p id="quoteText">
+        Loading inspiration...
+    </p>
+
+    <span id="quoteAuthor"></span>
+</div>
+
+<!--goals -->
+
+    <div id="goals">
+
+    <h3 id="progress">
+        0 of 0 Completed
+    </h3>
+
+    <h3>Write your goals for today~</h3>
+
+<div class="goal-input">
+    <input
+        type="text"
+            id="goalInput"
+            placeholder="Enter today's goal...">
+
+        <button id="addGoalBtn">+</button>
+
+    </div>
+
+    <div class="filters">
+
+        <button class="filter-btn active" data-filter="all">
+            All
+        </button>
+
+        <button class="filter-btn" data-filter="active">
+            Active
+        </button>
+
+        <button class="filter-btn" data-filter="completed">
+            Completed
+        </button>
+
+    </div>
+
+    <ul id="goalList"></ul>
+
+    <!-- MOVE IT HERE -->
+    <button id="clearCompleted">
+        Completed All Goals!
+    </button>
+
+</div>
+
+<!--toggle-->
+<div>
+    <button id="toggle">🌙</button>
+</div>
+
+<script type="module" src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,734 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+
+    min-height:100vh;
+    background:#2b1663;
+
+    color:white;
+
+}
+
+ /* animation for bg
+ 
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+} */
+
+#dashboard{
+
+margin-left:260px;
+
+padding:35px;
+
+display:grid;
+
+grid-template-columns:240px 1fr 320px;
+
+grid-template-rows:300px auto;
+
+gap:30px;
+min-height: 100vh;
+}
+
+
+#sidebar{
+    grid-column:1;
+    grid-row:1 / span 2;
+}
+
+#sidebar-container{
+
+    position:fixed;
+
+    left:0;
+    top:0;
+
+    width:260px;
+    height:100vh;
+
+    z-index:999;
+}
+/*clock*/
+
+
+/*colcok updatin*/
+/* =========================
+   Analog Clock
+========================= */
+
+.clock{
+    width:280px;
+    height:280px;
+    border-radius:50%;
+    position:relative;
+    background:rgba(27,21,48,.95);
+    backdrop-filter:blur(20px);
+    border:2px solid rgba(255,255,255,.08);
+    box-shadow:
+    0 0 20px rgba(109,40,217,.45),
+    0 0 45px rgba(236,72,153,.35);
+    grid-column:2;
+    grid-row:1;
+    justify-self:center;
+    align-self:center;
+    width:280px;
+    height:280px;
+
+}
+
+
+
+/* Numbers */
+
+.number{
+    position:absolute;
+    inset:0;
+
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+
+    font-size:22px;
+    font-weight:600;
+    color:white;
+
+    transform:rotate(var(--rotate));
+}
+
+.number span{
+    display:block;
+    margin-top:12px;
+
+    transform:rotate(calc(-1 * var(--rotate)));
+}
+
+/* Hands */
+.hand{
+    position:absolute;
+    left:50%;
+    bottom:50%;
+    transform:translateX(-50%);
+    transform-origin:bottom;
+}
+
+/* Hour Hand */
+
+
+.hour{
+
+    width:6px;
+
+    height:65px;
+
+    background:white;
+
+    border-radius:10px;
+
+}
+
+/* Minute Hand */
+
+.minute{
+
+    width:4px;
+
+    height:95px;
+
+    background:#ffd166;
+
+    border-radius:10px;
+
+}
+
+/* Second Hand */
+
+.second{
+
+    width:2px;
+
+    height:110px;
+
+    background:#ec4899;
+
+    border-radius:10px;
+
+}
+
+/* Center Dot */
+
+.center{
+
+    width:14px;
+
+    height:14px;
+
+    border-radius:50%;
+
+    background:white;
+
+    position:absolute;
+
+    top:50%;
+    left:50%;
+
+    transform:translate(-50%,-50%);
+
+    z-index:100;
+
+    box-shadow:0 0 10px white;
+
+}
+
+
+#day{
+    color:#ffd166;
+    margin-top:10px;
+}
+
+#date{
+    color:#d8b4fe;
+}
+
+/*clock ring glow effect*/
+.clock-ring{
+    box-shadow:
+    0 0 15px rgba(109,40,217,.5),
+    0 0 35px rgba(236,72,153,.4),
+    0 0 60px rgba(245,158,11,.3);
+}
+
+
+/*weather card*/
+
+#weatherCard{
+
+    grid-column:1;
+    grid-row:1;
+
+    width:230px;
+    height:280px;
+
+    padding:22px;
+
+    border-radius:22px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+}
+
+#city{
+
+    font-size:18px;
+
+    font-weight:600;
+
+}
+
+#weatherIcon{
+
+    width:95px;
+
+    height:95px;
+
+    object-fit:contain;
+
+}
+
+#temperature{
+
+    font-size:46px;
+
+    font-weight:700;
+
+    line-height:1;
+
+}
+
+#condition{
+
+    color:#FFD166;
+
+    font-size:18px;
+
+}
+
+.weather-details{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    margin-top:15px;
+
+}
+
+.detail-box{
+
+    width:85px;
+
+    height:55px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:6px;
+
+    border-radius:14px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(10px);
+
+}
+
+
+#toggle{
+
+position:fixed;
+
+top:30px;
+
+right:30px;
+
+width:55px;
+
+height:55px;
+
+border:none;
+
+border-radius:50%;
+
+cursor:pointer;
+
+background:rgba(255,255,255,.15);
+
+backdrop-filter:blur(15px);
+border:1px solid rgba(255,255,255,.2);
+
+color:white;
+
+font-size:22px;
+transition: .3s;
+z-index:999;
+
+}
+
+#toggle:hover{
+
+transform:scale(1.08);
+
+background:rgba(255,255,255,.22);
+}
+
+.details{
+    margin-top:15px;
+    display:flex;
+    justify-content:space-around;
+}
+
+/*quote card*/
+#quote{
+    grid-column:3;
+    grid-row:2;
+
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(18px);
+    border:1px solid rgba(255,255,255,.15);
+
+    border-radius:20px;
+    padding:28px;
+
+    display:flex;
+    flex-direction:column;
+
+    justify-content:flex-start;
+    align-items:center;
+
+    gap:20px;
+
+    min-height:330px;
+}
+
+.quote-icon{
+    font-size:2rem;
+}
+
+#quoteText{
+    margin-top:10px;
+    text-align:center;
+    line-height:1.8;
+    font-size:1.05rem;
+}
+
+#quoteAuthor{
+    margin-top:auto;
+    color:#FFD166;
+    font-style:italic;
+}
+
+
+
+
+
+
+#quote h3{
+    color:#FFD166;
+    font-size:1.4rem;
+}
+
+#quote p{
+    font-size:1.05rem;
+    line-height:1.8;
+    text-align:center;
+    color:#f5f5f5;
+}
+
+.quote-title{
+
+    color:#FFD166;
+
+    font-size:18px;
+
+}
+
+#quoteText{
+
+    font-size:20px;
+
+    line-height:1.6;
+
+    font-style:italic;
+
+}
+
+#quoteAuthor{
+
+    color:#d8b4fe;
+
+    font-size:15px;
+
+}
+
+#quote{
+
+animation:fadeQuote .8s ease;
+
+}
+
+@keyframes fadeQuote{
+
+from{
+
+opacity:0;
+transform:translateY(15px);
+
+}
+
+to{
+
+opacity:1;
+transform:translateY(0);
+
+}
+
+}
+
+/*goals*/
+#goals{
+    grid-column:2;
+    grid-row:2;
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(18px);
+    border-radius:20px;
+    padding:25px;
+    min-height:330px;
+    height:auto;
+    align-self: start;
+}
+
+.goal-input{
+display:flex;
+gap:10px;
+margin-top:20px;
+margin-bottom:20px;
+}
+
+#goalInput{
+flex:1;
+padding:14px;
+border:none;
+outline:none;
+border-radius:12px;
+background:rgba(255,255,255,.12);
+color:white;
+font-size:15px;
+}
+
+#goalInput::placeholder{
+color:rgba(255,255,255,.7);
+}
+
+#addGoalBtn{
+width:45px;
+border:none;
+border-radius:12px;
+cursor:pointer;
+font-size:24px;
+background:#ec4899;
+color:white;
+transition:.3s;
+}
+
+#addGoalBtn:hover{
+transform:scale(1.08);
+}
+
+#goalList{
+list-style:none;
+display:flex;
+flex-direction:column;
+gap:12px;
+}
+
+.goal{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:14px;
+border-radius:12px;
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(10px);
+animation:fadeIn .3s;
+}
+
+.goal.completed{
+text-decoration:line-through;
+opacity:.55;
+}
+
+.delete{
+cursor:pointer;
+font-size:20px;
+}
+
+@keyframes fadeIn{
+from{
+
+opacity:0;
+
+transform:translateY(12px);
+
+}
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+/*addition and deletion of tasks*/
+.goal{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:14px;
+margin-bottom:10px;
+border-radius:12px;
+background:rgba(255,255,255,.08);
+}
+
+.left{
+display:flex;
+align-items:center;
+gap:12px;
+}
+
+.completed{
+text-decoration:line-through;
+opacity:.5;
+}
+
+.delete{
+cursor:pointer;
+font-size:20px;
+transition:.25s;
+}
+
+.delete:hover{
+transform:scale(1.2);
+}
+
+
+
+/*to-do list*/
+#progress{
+margin:15px 0;
+font-size:15px;
+color:#fff;
+font-weight:500;
+}
+
+
+/*diff types of taks*/
+.filters{
+display:flex;
+gap:10px;
+margin:15px 0;
+}
+
+.filter-btn{
+
+padding:8px 16px;
+
+border:none;
+
+border-radius:10px;
+
+background:rgba(255,255,255,.08);
+
+color:white;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.filter-btn:hover{
+
+background:rgba(255,255,255,.18);
+
+}
+
+.filter-btn.active{
+
+background:#ec4899;
+
+}
+
+/*clear completed*/
+
+#clearCompleted{
+
+margin-top:18px;
+width:100%;
+padding:12px 18px;
+
+border:none;
+
+border-radius:12px;
+
+cursor:pointer;
+
+/* background:#ef4444; */
+
+color:black;
+
+font-weight:600;
+
+transition:.3s;
+
+}
+
+#clearCompleted:hover{
+
+transform:translateY(-2px);
+
+box-shadow:0 10px 25px rgba(239,68,68,.35);
+
+}
+
+/*planner card*/
+
+
+.time-slot{
+
+    display:grid;
+
+    grid-template-columns:90px 1fr;
+
+    gap:20px;
+
+    margin-bottom:15px;
+
+    align-items:center;
+
+}
+
+.time{
+
+    font-weight:600;
+
+}
+
+.time-slot input{
+
+    padding:12px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:rgba(255,255,255,.1);
+
+    color:white;
+
+    outline:none;
+
+}
+
+.time-slot input::placeholder{
+
+    color:#ddd;
+
+}
+
+.current-hour{
+
+    background:rgba(255,255,255,.15);
+
+    border-left:6px solid #FFD166;
+
+    border-radius:15px;
+
+    padding:12px;
+
+    box-shadow:0 0 20px rgba(255,209,102,.25);
+
+}
+
+
+
